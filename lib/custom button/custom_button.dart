@@ -102,13 +102,13 @@ class TextBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SizedBox(
+    return SizedBox(
       height: 50,
       width: 300,
       child: Center(
         child: Text(
-          'PUSH ME',
-          style: TextStyle(
+          buttonText,
+          style: const TextStyle(
             fontSize: 20,
             color: Colors.white,
             fontWeight: FontWeight.w900,
