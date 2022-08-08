@@ -16,6 +16,16 @@ class HomePage extends StatelessWidget {
       title: '3D Custom Button',
       theme: ThemeData(primaryColor: Colors.orange),
       home: Scaffold(
+        appBar: AppBar(
+          title: const Text(
+            'My Custom 3D Button',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 25,
+            ),
+          ),
+          centerTitle: true,
+        ),
         backgroundColor: Colors.grey,
         body: Center(
           child: Column(
