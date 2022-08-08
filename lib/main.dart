@@ -58,7 +58,12 @@ class _AnimatedButtonState extends State<AnimatedButton>
                     animation: _animationController,
                     builder: (context, Widget? child) {
                       final pushDepth = _animationController.value;
-                      return CustomButton(pushDepth: pushDepth);
+                      return CustomButton(
+                        pushDepth: pushDepth,
+                        bottomButtonColor: Color.fromARGB(255, 113, 32, 26),
+                        topButttonColor: Colors.red,
+                        buttonText: 'PUSH ME',
+                      );
                     }),
               ),
             ),

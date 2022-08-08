@@ -1,16 +1,23 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:custom_3d_button/reuseables/bottom_botton.dart';
-import 'package:custom_3d_button/reuseables/top_button.dart';
-import 'package:custom_3d_button/reuseables/text_box.dart';
 import 'package:flutter/material.dart';
+
+import 'package:custom_3d_button/reuseables/bottom_botton.dart';
+import 'package:custom_3d_button/reuseables/text_box.dart';
+import 'package:custom_3d_button/reuseables/top_button.dart';
 
 //PositionedTransition
 
 class CustomButton extends StatelessWidget {
   final double pushDepth;
+  final Color topButttonColor;
+  final Color bottomButtonColor;
+  final String buttonText;
   const CustomButton({
     Key? key,
     required this.pushDepth,
+    required this.topButttonColor,
+    required this.bottomButtonColor,
+    required this.buttonText,
   }) : super(key: key);
 
   @override
@@ -20,21 +27,23 @@ class CustomButton extends StatelessWidget {
       width: 300,
       child: Stack(
         children: [
-          const Positioned(
+          Positioned(
               bottom: 0,
               left: 0,
               child: BottomButton(
-                topColor: Color.fromARGB(255, 113, 32, 26),
+                topColor: bottomButtonColor,
               )),
           Positioned(
             top: 10 * pushDepth,
             left: 0,
-            child: const TopButton(topColor: Colors.red),
+            child: TopButton(
+              topColor: topButttonColor,
+            ),
           ),
           Positioned(
             top: 10 * pushDepth,
             left: 0,
-            child: const TextBox(buttonText: 'PUSH ME'),
+            child: TextBox(buttonText: buttonText),
           ),
         ],
       ),
