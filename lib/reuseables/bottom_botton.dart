@@ -14,7 +14,6 @@ class BottomButton extends StatelessWidget {
       width: 300,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(30),
-        // border: Border.all(color: Colors.grey, width: 2),
         color: topColor,
         boxShadow: const [
           BoxShadow(

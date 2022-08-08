@@ -34,7 +34,7 @@ class CustomButton extends StatelessWidget {
           Positioned(
             top: 10 * pushDepth,
             left: 0,
-            child: TextBox(buttonText: 'PUSH ME'),
+            child: const TextBox(buttonText: 'PUSH ME'),
           ),
         ],
       ),
