@@ -1,72 +1,32 @@
 import 'package:custom_3d_button/custom%20button/custom_button.dart';
+import 'package:custom_3d_button/custom_button_animation_controller.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const AnimatedButton());
+  runApp(const HomePage());
 }
 
-class AnimatedButton extends StatefulWidget {
-  const AnimatedButton({Key? key}) : super(key: key);
-
-  @override
-  State<AnimatedButton> createState() => _AnimatedButtonState();
-}
-
-class _AnimatedButtonState extends State<AnimatedButton>
-    with SingleTickerProviderStateMixin {
-  late final AnimationController _animationController;
-
-  @override
-  void initState() {
-    super.initState();
-    _animationController = AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 150),
-    );
-  }
-
-  @override
-  void dispose() {
-    _animationController.dispose();
-    super.dispose();
-  }
-
-  void _handleTapDown() {
-    _animationController.forward();
-  }
-
-  void _handleTapUp() {
-    _animationController.reverse();
-  }
+class HomePage extends StatelessWidget {
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      debugShowCheckedModeBanner: false,
+      title: '3D Custom Button',
+      theme: ThemeData(primaryColor: Colors.orange),
       home: Scaffold(
+        backgroundColor: Color.fromARGB(255, 1, 52, 47),
         body: Center(
-          child: SizedBox(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25),
-              child: GestureDetector(
-                onTapDown: (_) => _handleTapDown(),
-                onTapUp: (_) => _handleTapUp(),
-                child: AnimatedBuilder(
-                    animation: _animationController,
-                    builder: (context, Widget? child) {
-                      final pushDepth = _animationController.value;
-                      return CustomButton(
-                        pushDepth: pushDepth,
-                        bottomButtonColor: Color.fromARGB(255, 113, 32, 26),
-                        topButttonColor: Colors.red,
-                        buttonText: 'PUSH ME',
-                      );
-                    }),
-              ),
-            ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              AnimatedButton(
+                buttonText: 'PUSH ME',
+                topButttonColor: Colors.red,
+                bottomButtonColor: Color.fromARGB(255, 113, 32, 26),
+              )
+            ],
           ),
         ),
       ),
