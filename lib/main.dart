@@ -16,16 +16,27 @@ class HomePage extends StatelessWidget {
       title: '3D Custom Button',
       theme: ThemeData(primaryColor: Colors.orange),
       home: Scaffold(
-        backgroundColor: Color.fromARGB(255, 1, 52, 47),
+        backgroundColor: Colors.grey,
         body: Center(
           child: Column(
             mainAxisSize: MainAxisSize.min,
-            children: [
+            children: const [
               AnimatedButton(
                 buttonText: 'PUSH ME',
                 topButttonColor: Colors.red,
                 bottomButtonColor: Color.fromARGB(255, 113, 32, 26),
-              )
+              ),
+              SizedBox(height: 20),
+              AnimatedButton(
+                  buttonText: 'ENROLL NOW',
+                  topButttonColor: Colors.lime,
+                  bottomButtonColor: Color.fromARGB(255, 242, 242, 243)),
+              SizedBox(height: 20),
+              AnimatedButton(
+                buttonText: 'ADD TO CART',
+                topButttonColor: Colors.blue,
+                bottomButtonColor: Colors.blueGrey,
+              ),
             ],
           ),
         ),
